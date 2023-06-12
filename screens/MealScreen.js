@@ -4,18 +4,26 @@ import { MEALS } from "../data/dummy-data";
 import { Image } from "react-native";
 import { StyleSheet } from "react-native";
 import MealItemDetails from "../components/MealItemDetails";
+import IconButton from "../components/IconButton";
 
 const MealScreen = ({ route, navigation }) => {
   const mealId = route.params.mealId;
   const meal = MEALS.find((meal) => meal.id === mealId);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       title: meal.title,
+      headerRight: () => {
+        return <IconButton color="white" icon="star" handlePress={handlePressStar} />;
+      },
     });
-  }, [meal]);
+  }, [meal, handlePressStar]);
+  const handlePressStar = () => {
+    console.log('button was pressed!');
+  };
 
   return (
-    <ScrollView style={{marginBottom:32}}>
+    <ScrollView style={{ marginBottom: 32 }}>
       <Image style={styles.image} source={{ uri: meal.imageUrl }} />
       <Text style={styles.title}>{meal.title}</Text>
       <MealItemDetails
