@@ -21,7 +21,6 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   }, [catId, navigation]);
 
   const renderMealData = (itemData) => {
-    console.log(itemData);
     return (
       <MealItem
         itemId={itemData.item.id}
