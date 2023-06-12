@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealScreen from "./screens/MealScreen";
 import FavoritesContextProvider from "./context/Favorites-context";
+import FavoritesScreen from "./screens/FavoritesScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,10 @@ export default function App() {
             <Stack.Screen
               name="MealsOverview"
               component={MealsOverviewScreen}
+            />
+            <Stack.Screen
+              name="Favorites"
+              component={FavoritesScreen}
             />
             <Stack.Screen name="SingleMeal" component={MealScreen} />
           </Stack.Navigator>
