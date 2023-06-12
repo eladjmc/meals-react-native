@@ -1,4 +1,4 @@
-import {useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import MealItem from "../components/MealItem";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 
@@ -21,8 +21,10 @@ const MealsOverviewScreen = ({ route, navigation }) => {
   }, [catId, navigation]);
 
   const renderMealData = (itemData) => {
+    console.log(itemData);
     return (
       <MealItem
+        itemId={itemData.item.id}
         title={itemData.item.title}
         imageUrl={itemData.item.imageUrl}
         affordability={itemData.item.affordability}
