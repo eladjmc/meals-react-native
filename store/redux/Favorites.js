@@ -6,6 +6,9 @@ const favoritesSlice = createSlice({
     ids: [],
   },
   reducers: {
+    getIds: (state)=>{
+      return state;
+    },
     addFavorite: (state, action) => {
       state.ids.push(action.payload.id);
     },

@@ -8,15 +8,18 @@ import FavoritesContextProvider from "./context/Favorites-context";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import { Provider } from "react-redux";
 import { store } from "./store/redux/store";
+import { mealsSaga } from "./store/saga/mealsSaga";
 
 const Stack = createStackNavigator();
+
+
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
       {/* <FavoritesContextProvider> */}
-      <Provider store ={store}>
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{

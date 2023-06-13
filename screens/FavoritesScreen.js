@@ -6,7 +6,7 @@ import FavoriteItem from "../components/FavoriteItem";
 import { useSelector } from "react-redux";
 
 const FavoritesScreen = () => {
-  const favoritesMealIds = useSelector((state) => state.favoritesMeals.ids);
+  const favoritesMealIds = useSelector((state) => state.ids);
 
   return (
     <>
